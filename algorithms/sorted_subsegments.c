@@ -6,7 +6,7 @@
 /*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 21:14:01 by angkim            #+#    #+#             */
-/*   Updated: 2019/05/18 17:45:16 by angkim           ###   ########.fr       */
+/*   Updated: 2019/05/18 18:13:24 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		*sort_array(int *arr, int s, int e)
 	int tmp;
 	int i;
 
-	while (s < e - 1)
+	while (s < e)
 	{
 		lowest = s;
 		i = s;
@@ -70,21 +70,23 @@ int		sorted_subsegments(int k, int *a, int a_count, int queries_rows, int **quer
 	i = 0;
 	result = a[k];
 	next_arr = (int *)malloc(sizeof(int) * a_count);
-	while (i < queries_rows)
+	if (next_arr)
 	{
-		start = queries[i][0];
-		end = queries[i][1];
-		if (end < a_count)
+		while (i < queries_rows)
 		{
-			next_arr = sort_array(a, start, end);
-printf("start: %d\tend: %d\n", start, end);
-print_array(next_arr, a_count);
-printf("\n");
-			result = next_arr[k];
+			start = queries[i][0];
+			end = queries[i][1];
+			if (end < a_count)
+			{
+				next_arr = sort_array(a, start, end);
+//print_array(next_arr, a_count);
+//printf("\n");
+				result = next_arr[k];
+			}
+			i++;
 		}
-		i++;
 	}
-	free(next_arr);
+	//free(next_arr);
 	return (result);
 }
 
@@ -124,6 +126,6 @@ int		main(void)
 	}
 
 	printf("%d\n", sorted_subsegments(k, a, a_count, queries_rows, queries));
-
+	free(queries);
 	return (0);
 }
