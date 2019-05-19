@@ -6,12 +6,15 @@
 /*   By: angkim <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 21:14:01 by angkim            #+#    #+#             */
-/*   Updated: 2019/05/18 18:13:24 by angkim           ###   ########.fr       */
+/*   Updated: 2019/05/18 18:14:51 by angkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 ** https://www.hackerrank.com/challenges/sorted-subsegments/problem?h_r=next-challenge&h_v=zen
+**
+** https://stackoverflow.com/questions/2786899/fastest-sort-of-fixed-length-6-int-array
+**
 ** SORTED SUBSEGMENTS: Given an array of n integers, perform q queries to sort
 ** 		subarray(s), and output the element at index k. Input is given with the
 **		first line containing three integers representing: n, q, k. Second line
